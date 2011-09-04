@@ -4,7 +4,7 @@ Syncing vim's vimrc AND submodules with Git & Pathogen
 
 Installation:
 
-    git clone git://github.com/johnmercer/dotvim.git ~/.vim
+    git clone git://github.com/jfmercer/dotvim.git ~/.vim
 
 Create symlinks:
 
