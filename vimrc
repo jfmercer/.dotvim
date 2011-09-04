@@ -2,8 +2,8 @@
 
 " PATHOGEN -- Keep at top!
 " "-------------------------------------------------
-" set nocompatible        " Disable vi compatibility
-" filetype off " Turn filetype detection off because it interferes with pathogen (Debian turns ft on by default)
+set nocompatible        " Disable vi compatibility
+filetype off " Turn filetype detection off because it interferes with pathogen (Debian turns ft on by default)
 " call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
 " call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
 " "-------------------------------------------------
