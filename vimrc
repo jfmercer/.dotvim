@@ -15,7 +15,7 @@ filetype on             " Enable filetype detection----This may interfere with P
 filetype indent on      " Enable filetype-specific indenting
 filetype plugin on      " Enable filetype-specific plugins
 set vb t_vb=            " Turn off bell
-" set number            " Adds line numbers. Unneeded now because of status
+set number              " Adds line numbers. Unneeded now because of status
 "                         line. See "set stl=" below
 " set mouse=a           " Enable the mouse
 
@@ -23,7 +23,10 @@ set vb t_vb=            " Turn off bell
 " set backup
 " set backupdir=$HOME/.tmp
 " set writebackup
-" set encoding=utf-8
+set encoding=utf-8
+
+" Set Font for gvim
+set gfn=Monaco:h16
 
 " SEARCH OPTIONS
 set incsearch           "Find as you type the search
@@ -57,8 +60,9 @@ set wrap
 " let g:indent_guides_color_change_percent = 3
 " let g:indent_guides_enable_on_vim_startup = 1
 "
-" COLORSCHEME SETTINGS 
-" colorscheme zenburn 
+" SOLARIZED COLORSCHEME SETTINGS 
+set background=dark
+colorscheme solarized 
 
 " Ctags
 set tags=~/.vim/bundle/vimtags
