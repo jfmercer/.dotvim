@@ -13,3 +13,9 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "vim-sparkup"]
+	path = vim-sparkup
+	url = git://github.com/kogakure/vim-sparkup.git
+[submodule "bundle/vim-sparkup"]
+	path = bundle/vim-sparkup
+	url = git://github.com/kogakure/vim-sparkup.git

@@ -6,8 +6,8 @@ set nocompatible        " Disable vi compatibility
 filetype off " Turn filetype detection off because it interferes with pathogen (Debian turns ft on by default)
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-" call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
-" call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
+call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
+call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
 " "-------------------------------------------------
 
 syntax on               " Enable syntax highlighting
@@ -18,7 +18,8 @@ set vb t_vb=            " Turn off bell
 set number              " Adds line numbers. Unneeded now because of status
 "                         line. See "set stl=" below
 " set mouse=a           " Enable the mouse
-
+set cpoptions+=$        " Appends a $ symbol to the end of a block of code being changed by "c" & "C"
+"
 " backup to ~/.tmp
 " set backup
 " set backupdir=$HOME/.tmp
@@ -65,7 +66,7 @@ set background=dark
 colorscheme solarized 
 
 " Ctags
-set tags=~/.vim/bundle/vimtags
+set tags=~/.vim/bundle/taglist.vim
 let Tlist_WinWidth = 50
 map <F3> :TlistToggle<cr>
 
