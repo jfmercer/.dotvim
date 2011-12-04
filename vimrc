@@ -6,8 +6,8 @@ set nocompatible        " Disable vi compatibility
 filetype off " Turn filetype detection off because it interferes with pathogen (Debian turns ft on by default)
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
-call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
+" call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
+" call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
 " "-------------------------------------------------
 
 syntax on               " Enable syntax highlighting
@@ -25,9 +25,15 @@ set cpoptions+=$        " Appends a $ symbol to the end of a block of code being
 " set backupdir=$HOME/.tmp
 " set writebackup
 set encoding=utf-8
-
+"
+" folding settings
+" set foldmethod=indent   "fold based on indent
+" set foldnestmax=10      "deepest fold is 10 levels
+" set nofoldenable        "dont fold by default
+" set foldlevel=1         "this is just what i use
+"
 " Set Font for gvim
-set gfn=Monaco:h16
+set gfn=Consolas:h16
 
 " SEARCH OPTIONS
 set incsearch           "Find as you type the search
@@ -53,8 +59,9 @@ set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
 
 " BETTER LINE WRAPPING
 set wrap
-" set textwidth=79      " I don't know yet what this does.
+set textwidth=79
 " set formatoptions=qrn1 " I don't know yet what this does.
+set colorcolumn=85 " show a colored column at 85 characters
 
 " INDENT GUIDES SETTINGS
 " "-------------------------------------------------
@@ -100,6 +107,7 @@ endif
 " This maps <ESC> to 2 letter "j"'s 
 :imap jj <Esc>
 " Shortcut to rapidly toggle `set list` with "\l"
+set list
 nmap <leader>l :set list!<CR>
 " Backspace for dummies
 set backspace=indent,eol,start

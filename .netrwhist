@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/mercer/.vim'
 let g:netrw_dirhist_2='/Users/mercer/Dropbox/.vim/.git'
 let g:netrw_dirhist_3='/Users/mercer/Dropbox/Octopress/source/Resume'
+let g:netrw_dirhist_4='/Users/mercer/Dropbox/Octopress/.git'
+let g:netrw_dirhist_5='/Users/mercer/Dropbox/Octopress/source/_posts'
+let g:netrw_dirhist_6='/Users/mercer/Dropbox/Octopress/source/a/2011-07-29-elevator-hack'
