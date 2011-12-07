@@ -7,7 +7,7 @@ filetype off " Turn filetype detection off because it interferes with pathogen (
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 " call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
-" call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
+call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
 " "-------------------------------------------------
 
 syntax on               " Enable syntax highlighting
