@@ -25,6 +25,7 @@ set cpoptions+=$        " Appends a $ symbol to the end of a block of code being
 " set backupdir=$HOME/.tmp
 " set writebackup
 set encoding=utf-8
+scriptencoding utf-8
 "
 " folding settings
 " set foldmethod=indent   "fold based on indent
