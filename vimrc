@@ -5,8 +5,8 @@
 set nocompatible        " Disable vi compatibility
 filetype off " Turn filetype detection off because it interferes with pathogen (Debian turns ft on by default)
 runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-" call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
+" call pathogen#infect()
+call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
 call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
 " "-------------------------------------------------
 
