@@ -62,7 +62,7 @@ set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
 set wrap
 set textwidth=79
 " set formatoptions=qrn1 " I don't know yet what this does.
-set colorcolumn=85 " show a colored column at 85 characters
+" set colorcolumn=85 " show a colored column at 85 characters
 
 " INDENT GUIDES SETTINGS
 " "-------------------------------------------------
