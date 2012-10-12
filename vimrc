@@ -63,6 +63,14 @@ set textwidth=79
 " set formatoptions=qrn1 " I don't know yet what this does.
 " set colorcolumn=85 " show a colored column at 85 characters
 
+" NERDTree autocommands
+" Open NERDTree on startup
+autocmd vimenter * NERDTree
+" Open NERDTree on startup EVEN IF no files were specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim even if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " INDENT GUIDES SETTINGS
 " "-------------------------------------------------
 " let g:indent_guides_color_change_percent = 3
