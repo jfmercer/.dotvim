@@ -33,7 +33,7 @@ scriptencoding utf-8
 " set foldlevel=1         "this is just what i use
 "
 " Set Font for gvim
-set gfn=Consolas:h16
+set guifont=Monaco:h16
 
 " SEARCH OPTIONS
 set incsearch           "Find as you type the search
@@ -53,6 +53,7 @@ set linespace=3         " Prefer a slightly higher line height
 set noerrorbells        " Disables the annoying beep
 set lazyredraw          " Don't update the display while executing macros
 set wildmenu            " Enable enhanced command-line completion
+set wildignore=*.o,*.DS_Store,*.pdf
 
 " Set the status line the way I like it
 set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
