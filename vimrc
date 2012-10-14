@@ -28,6 +28,7 @@ set history=1000        " Store lots of :cmdline history
 set showcmd             " Show incomplete cmds down the bottom
 set showmode            " Show current mode down the bottom
 set gcr=a:blinkon0      " Disable cursor blink
+set backspace=indent,eol,start  "Allow backspace in insert mode
 set encoding=utf-8
 setglobal fileencoding=utf-8
 
