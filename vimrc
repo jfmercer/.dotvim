@@ -56,8 +56,13 @@ set wildmenu            " Enable enhanced command-line completion
 set wildignore=*.o,*.DS_Store,*.pdf
 
 " Set the status line the way I like it
-set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
+" set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
 
+" set up vim-powerline
+set t_Co=256
+" let g:Powerline_theme="skwp"
+let g:Powerline_colorscheme="skwp"
+let g:Powerline_symbols = 'fancy'
 " BETTER LINE WRAPPING
 set wrap
 set textwidth=79
