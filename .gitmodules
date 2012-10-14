@@ -26,3 +26,6 @@
 [submodule "bundle/MarcWeber-vim-add-mw-utils"]
 	path = bundle/MarcWeber-vim-add-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/tomtom-tlib_vim"]
+	path = bundle/tomtom-tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
