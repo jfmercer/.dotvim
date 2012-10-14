@@ -102,16 +102,6 @@ set t_Co=256
 let g:Powerline_colorscheme="skwp"
 let g:Powerline_symbols = 'fancy'
 
-
-" ================ NERDTree autocommands  =========================
-" Open NERDTree on startup
-autocmd vimenter * NERDTree
-" Open NERDTree on startup EVEN IF no files were specified
-autocmd vimenter * if !argc() | NERDTree | endif
-" Close vim even if the only window left open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-
 " ================ SOLARIZED COLORSCHEME SETTINGS =================
 set background=dark
 colorscheme solarized 
@@ -120,13 +110,16 @@ colorscheme solarized
 
 set tags=~/.vim/bundle/taglist.vim
 let Tlist_WinWidth = 50
-map <F3> :TlistToggle<cr>
+
 
 " ================ Key Mappings  ==================================
 
 :imap jj <Esc>		" This maps <ESC> to 2 letter "j"'s 
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
-set pastetoggle=<F2>	"Toggle paste function for clipboard pasting
+
+set pastetoggle=<F2>			" Toggle paste function for clipboard pasting
+map <F3> :TlistToggle<cr>		" Toggle taglist
+map <F4> :NERDTreeToggle<CR> 	" Toggle NERDTree
 
 " This sets the movement keys to move by DISPLAY LINE rather than by 
 " PHYSICAL LINE. In other words, the keys won't be all screwy. 
@@ -199,3 +192,11 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 " NEW WINDOWS
 " :new opens a horizontal window
 " :vnew opens a vertical window
+
+" ================ NERDTree autocommands  =========================
+" Open NERDTree on startup
+" autocmd vimenter * NERDTree
+" Open NERDTree on startup EVEN IF no files were specified
+" autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim even if the only window left open is NERDTree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
