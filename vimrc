@@ -1,75 +1,108 @@
 " Mercer's VIMRC file
 
-" PATHOGEN -- Keep at top!
-" "-------------------------------------------------
 set nocompatible        " Disable vi compatibility
-filetype off " Turn filetype detection off because it interferes with pathogen (Debian turns ft on by default)
+
+" =============== Pathogen Initialization =========================
+" This loads all the plugins in ~/.vim/bundle
+" Use tpope's pathogen plugin to manage all other plugins
+
 runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles() " Load all plugins in the ~/.vim/bundle directory
-call pathogen#helptags()                  " Generate helptags for everything in 'runtimepath'
-" "-------------------------------------------------
+call pathogen#infect()		
+call pathogen#helptags()	
+
+" ================ General Config =================================
 
 syntax on               " Enable syntax highlighting
 filetype on             " Enable filetype detection----This may interfere with Pathogen
-filetype indent on      " Enable filetype-specific indenting
-filetype plugin on      " Enable filetype-specific plugins
-set vb t_vb=            " Turn off bell
-set number              " Adds line numbers. Unneeded now because of status
-"                         line. See "set stl=" below
-" set mouse=a           " Enable the mouse
-set cpoptions+=$        " Appends a $ symbol to the end of a block of code being changed by "c" & "C"
-"
-" backup to ~/.tmp
-" set backup
-" set backupdir=$HOME/.tmp
-" set writebackup
-set encoding=utf-8
-scriptencoding utf-8
-"
-" folding settings
-" set foldmethod=indent   "fold based on indent
-" set foldnestmax=10      "deepest fold is 10 levels
-" set nofoldenable        "dont fold by default
-" set foldlevel=1         "this is just what i use
-"
-" Set Font for gvim
-set guifont=Monaco:h16
-
-" SEARCH OPTIONS
-set incsearch           "Find as you type the search
-set hlsearch            "highlight search results
-set ignorecase          "Case insensitive search
-set smartcase           "Case insensitive search (again)
-
-" Basic Settings
+set visualbell          " Turn off bell
+set number              " Adds line numbers.
 set hidden              " Allows unwritten buffers to be hidden 
 set ruler       		" Show the cursor position all the time
 set showmode            " Show which mode are we in
-set smartindent		    " Always set autoindenting on
-set autoindent		    " Always set autoindenting on
 set showmatch		    " Show matching brackets.
 set laststatus=2        " Always show the status line
 set linespace=3         " Prefer a slightly higher line height
 set noerrorbells        " Disables the annoying beep
 set lazyredraw          " Don't update the display while executing macros
-set wildmenu            " Enable enhanced command-line completion
-set wildignore=*.o,*.DS_Store,*.pdf
+set history=1000        "Store lots of :cmdline history
+set showcmd             "Show incomplete cmds down the bottom
+set showmode            "Show current mode down the bottom
+set gcr=a:blinkon0      "Disable cursor blink
+set encoding=utf-8
+setglobal fileencoding=utf-8
 
-" Set the status line the way I like it
-" set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
+" ================ Indentation ====================================
 
-" set up vim-powerline
+set autoindent 			" Always set autoindenting on
+set smartindent
+set smarttab
+" These change tabs to spaces
+" To change spaces back to tabs, use set: noexpandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+
+filetype plugin on 		" Enable filetype-specific plugins
+filetype indent on 		" Enable filetype-specific indenting
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
+
+" The following specifies tab/whitespace settings for specific filetypes. autocmd & "filetype on" must be set
+if has("autocmd") 
+" Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  endif
+
+" ================ Folds ==========================================
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+" ================ Search Settings  ===============================
+
+set incsearch           "Find as you type the search
+set hlsearch            "highlight search results
+set ignorecase          "Case insensitive search
+set smartcase           "Case insensitive search (again)
+
+" ================ Completion =====================================
+
+set wildmode=list:longest
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif,*.pdf
+
+" ================ gvim font =====================================
+
+set guifont=Monaco:h16
+
+" ================ vim-powerline  =================================
+
 set t_Co=256
-" let g:Powerline_theme="skwp"
+" let g:Powerline_theme="skwp"	"this messes up the prompt somehow
 let g:Powerline_colorscheme="skwp"
 let g:Powerline_symbols = 'fancy'
-" BETTER LINE WRAPPING
-set wrap
-set textwidth=79
-" set formatoptions=qrn1 " I don't know yet what this does.
-" set colorcolumn=85 " show a colored column at 85 characters
 
-" NERDTree autocommands
+
+" ================ NERDTree autocommands  =========================
 " Open NERDTree on startup
 autocmd vimenter * NERDTree
 " Open NERDTree on startup EVEN IF no files were specified
@@ -77,81 +110,22 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim even if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" INDENT GUIDES SETTINGS
-" "-------------------------------------------------
-" let g:indent_guides_color_change_percent = 3
-" let g:indent_guides_enable_on_vim_startup = 1
-"
-" SOLARIZED COLORSCHEME SETTINGS 
+
+" ================ SOLARIZED COLORSCHEME SETTINGS =================
 set background=dark
 colorscheme solarized 
 
-" Ctags
+" ================ taglist plugin  ================================
+
 set tags=~/.vim/bundle/taglist.vim
 let Tlist_WinWidth = 50
 map <F3> :TlistToggle<cr>
 
-" TAB SETTINGS
-" The following changes tabs to spaces
-set ts=4 sts=4 sw=4 expandtab
-" To change spaces back to tabs, use set: noexpandtab
-" 
-" The following specifies tab/whitespace settings for specific filetypes.
-" "autocmd" must be supported by VIM for this to work
-" "filetype on" must be set (as it is below)
+" ================ Key Mappings  ==================================
 
-if has("autocmd")
-" Enable file type detection
-  filetype on
-     
-" Syntax of these languages is fussy over tabs Vs spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-             
-" Customizations based on house-style (arbitrary)
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-               
-" Treat .rss files as XML
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
-endif
-
-" Mappings
-" This maps <ESC> to 2 letter "j"'s 
-:imap jj <Esc>
-" Shortcut to rapidly toggle `set list` with "\l"
-set list
-nmap <leader>l :set list!<CR>
-" Backspace for dummies
-set backspace=indent,eol,start
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-
-" Let's make it easy to edit this file (mnemonic for the key sequence is
-" 'e'dit 'v'imrc)
-nmap <silent> ,ev :e $MYVIMRC<cr>
-
-" And to source this file as well (mnemonic for the key sequence is
-" 's'ource 'v'imrc)
-nmap <silent> ,sv :so $MYVIMRC<cr>
-
-" :SET PASTE allows me to paste text from outside vim or the terminal without
-" screwing up the formatting & indentation. 
-" This setting allows me to toggle :SET PASTE with <F2>
-set pastetoggle=<F2>
-
-" This sets vertical split windows to open on the right rather than the left.
-set splitright
-
-" This sets horizontal split windows to open below rather than above.
-set splitbelow
-
-" NEW WINDOWS
-" :new opens a horizontal window
-" :vnew opens a vertical window
-" vim -o file.one file.two on the commandline will open a series
-" of files in horizontal windows
+:imap jj <Esc>		" This maps <ESC> to 2 letter "j"'s 
+nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
+set pastetoggle=<F2>	"Toggle paste function for clipboard pasting
 
 " This sets the movement keys to move by DISPLAY LINE rather than by 
 " PHYSICAL LINE. In other words, the keys won't be all screwy. 
@@ -170,10 +144,37 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+nmap <silent> ,ev :e $MYVIMRC<cr>	" 'e'dit 'v'imrc
+nmap <silent> ,sv :so $MYVIMRC<cr>	" 's'ource 'v'imrc
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Omni complete functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ================ Window Settings  ==============================
+
+set splitright 		" This sets vertical split windows to open on the right rather than the left.
+set splitbelow  	 " This sets horizontal split windows to open below rather than above.
+
+" ================ Turn Off Swap Files ===========================
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Persistent Undo ===============================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+
+" ================ Scrolling =====================================
+
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+" ================ Omnicomplete ==================================
+
+set ofu=syntaxcomplete#Complete 	" Turn on omnicomplete
 " Use CTRL-X CTRL-O in Insert mode to start the completion.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -183,3 +184,17 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete 
+
+" ================ Notes =========================================
+" Old Status Line setting
+" set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
+
+" Use the same symbols as TextMate for tabstops and EOLs
+" set listchars=tab:▸\ ,eol:¬
+
+" vim -o file.one file.two on the commandline will open a series
+" of files in horizontal windows
+
+" NEW WINDOWS
+" :new opens a horizontal window
+" :vnew opens a vertical window
