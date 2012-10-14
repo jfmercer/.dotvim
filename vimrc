@@ -24,10 +24,10 @@ set laststatus=2        " Always show the status line
 set linespace=3         " Prefer a slightly higher line height
 set noerrorbells        " Disables the annoying beep
 set lazyredraw          " Don't update the display while executing macros
-set history=1000        "Store lots of :cmdline history
-set showcmd             "Show incomplete cmds down the bottom
-set showmode            "Show current mode down the bottom
-set gcr=a:blinkon0      "Disable cursor blink
+set history=1000        " Store lots of :cmdline history
+set showcmd             " Show incomplete cmds down the bottom
+set showmode            " Show current mode down the bottom
+set gcr=a:blinkon0      " Disable cursor blink
 set encoding=utf-8
 setglobal fileencoding=utf-8
 
@@ -92,7 +92,7 @@ set wildignore+=*.png,*.jpg,*.gif,*.pdf
 
 " ================ gvim font =====================================
 
-set guifont=Monaco:h16
+set guifont=Monaco\ for\ Powerline:h16
 
 " ================ vim-powerline  =================================
 
