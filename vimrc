@@ -102,15 +102,9 @@ set t_Co=256
 let g:Powerline_colorscheme="skwp"
 let g:Powerline_symbols = 'fancy'
 
-" ================ SOLARIZED COLORSCHEME SETTINGS =================
+" ================ Solarized Colorscheme Settings =================
 set background=dark
 colorscheme solarized 
-
-" ================ taglist plugin  ================================
-
-set tags=~/.vim/bundle/taglist.vim
-let Tlist_WinWidth = 50
-
 
 " ================ Key Mappings  ==================================
 
@@ -118,7 +112,7 @@ let Tlist_WinWidth = 50
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
 
 set pastetoggle=<F2>			" Toggle paste function for clipboard pasting
-map <F3> :TlistToggle<cr>		" Toggle taglist
+nmap <F3> :TagbarToggle<CR>
 map <F4> :NERDTreeToggle<CR> 	" Toggle NERDTree
 
 " This sets the movement keys to move by DISPLAY LINE rather than by 
