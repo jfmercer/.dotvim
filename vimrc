@@ -50,8 +50,8 @@ filetype indent on 		" Enable filetype-specific indenting
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
+set wrap            "Wrap lines
+set linebreak       "Wrap lines at convenient points
 
 " The following specifies tab/whitespace settings for specific filetypes. autocmd & "filetype on" must be set
 if has("autocmd") 
