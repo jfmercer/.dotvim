@@ -112,8 +112,8 @@ colorscheme solarized
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
 
 set pastetoggle=<F2>			" Toggle paste function for clipboard pasting
-nmap <F3> :TagbarToggle<CR>
-map <F4> :NERDTreeToggle<CR> 	" Toggle NERDTree
+nmap <F3> :NERDTreeToggle<CR> 	" Toggle NERDTree
+nmap <F4> :TagbarToggle<CR>     " Toggle tagbar
 
 " This sets the movement keys to move by DISPLAY LINE rather than by 
 " PHYSICAL LINE. In other words, the keys won't be all screwy. 
