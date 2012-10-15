@@ -34,3 +34,6 @@
 [submodule "bundle/Lokaltog-vim-easymotion"]
 	path = bundle/Lokaltog-vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/sjl-gundo"]
+	path = bundle/sjl-gundo
+	url = https://github.com/sjl/gundo.vim.git
