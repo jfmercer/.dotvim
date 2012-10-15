@@ -33,7 +33,7 @@ As you can already see, I manage my vim plugins as git submodules with the help 
 I've tried to keep my vimrc organized by topic and as clean as possible. Suggestions are welcome.
 
 # Key Mappings
-* ESC is now "jj". This will save your left pinky from a premature death.
+* ESC is now `jj`. This will save your left pinky from a premature death.
 * F2 toggles paste.
 * F3 toggles NERDTree.
 * F4 toggles tagbar.
