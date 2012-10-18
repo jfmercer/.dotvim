@@ -57,7 +57,7 @@ Gundo views and explorers vim's undo history. vim keeps its undo history in a tr
 ### [Syntastic](https://github.com/scrooloose/syntastic)
 Syntastic brings syntax checking to vim. As soon as you save a file, syntastic will check it for syntax errors and list them on the left-hand column. Note that it works with supported syntax checks, and if these are not installed, it won't work. For example, for Python, you need to have `flake8`, `pyflakes`, or `pylint` in your `$PATH`. Jump between errors with `:lnext` and `:lprev`. 
 ### [Easy Motion](https://github.com/Lokaltog/vim-easymotion)
-Easy Motion makes it much, much easier to move the cursor around the screen. See @Lokaltog's [introduction](https://github.com/Lokaltog/vim-easymotion#introduction) for details. The short version: hit `<Leader><Leader>` followed by a motion key (say, `<Leader><Leader>w` and then watch the magic happen. 
+Easy Motion makes it much, much easier to move the cursor around the screen. See @Lokaltog's [introduction](https://github.com/Lokaltog/vim-easymotion#introduction) for details. The short version: hit `<Leader><Leader>` followed by a motion key (say, `<Leader><Leader>w`) and then watch the magic happen. 
 ### [Snipmate](https://github.com/garbas/vim-snipmate) and [Snipmate-Snippets](https://github.com/honza/snipmate-snippets)
 Although a pair, these two function as one plugin. They bring Textmate-style snippets to vim. [Here is a list of usable snippets](https://github.com/honza/snipmate-snippets/tree/master/snippets). This plugin depends on [tlib](https://github.com/tomtom/tlib_vim) and [addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils). 
 ### [vim-powerline](https://github.com/Lokaltog/vim-powerline)
