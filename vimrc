@@ -108,6 +108,7 @@ colorscheme solarized
 
 " ================ Key Mappings  ==================================
 
+let mapleader = ","     " Changes leader key from "\" to ","
 :imap jj <Esc>		" This maps <ESC> to 2 letter "j"'s 
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
 
