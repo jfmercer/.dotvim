@@ -51,6 +51,8 @@ This manages the runtimepath.
 To quote Tim Pope, it's "a Git wrapper so awesome, it should be illegal."
 ### [NERDTree](https://github.com/scrooloose/nerdtree)
 A file tree explorer. Basically, the project drawer you may be missing from Textmate and Sublime Text.
+### [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
+This makes commenting much easier. Select something, `[count]<leader>cc`, done. 
 ### [Tagbar](https://github.com/majutsushi/tagbar)
 Tagbar is for browsing the tags of source code files. It needs to have [Exuberant ctags](http://ctags.sourceforge.net/) installed in order to work.
 ### [Gundo](http://sjl.bitbucket.org/gundo.vim/)
@@ -65,5 +67,3 @@ Although a pair, these two function as one plugin. They bring Textmate-style sni
 A beautiful and very useful vim status line. For this to work properly, you may have to install Powerline-ready fonts, four of which [may be found here](https://github.com/jfmercer/mad/tree/master/fonts). 
 ### [vim-solarized](https://github.com/altercation/vim-colors-solarized)
 The best color scheme in the business. It's like a massage for the eyes. 
-### [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
-This makes commenting much easier. Select something, `[count]<leader>cc`, done. 
