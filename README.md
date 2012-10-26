@@ -65,3 +65,5 @@ Although a pair, these two function as one plugin. They bring Textmate-style sni
 A beautiful and very useful vim status line. For this to work properly, you may have to install Powerline-ready fonts, four of which [may be found here](https://github.com/jfmercer/mad/tree/master/fonts). 
 ### [vim-solarized](https://github.com/altercation/vim-colors-solarized)
 The best color scheme in the business. It's like a massage for the eyes. 
+### [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
+This makes commenting much easier. Select something, `[count]<leader>cc`, done. 
