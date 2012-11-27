@@ -109,7 +109,8 @@ colorscheme solarized
 " ================ Key Mappings  ==================================
 
 let mapleader = ","     " Changes leader key from "\" to ","
-:imap jj <Esc>		" This maps <ESC> to 2 letter "j"'s 
+" Better to use <C-[> than a custom keymapping to simulate <ESC>
+" :imap jj <Esc>		" This maps <ESC> to 2 letter "j"'s 
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
 
 set pastetoggle=<F2>			" Toggle paste function for clipboard pasting
