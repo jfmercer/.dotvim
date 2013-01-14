@@ -40,3 +40,6 @@
 [submodule "bundle/scrooloose-nerdcommenter"]
 	path = bundle/scrooloose-nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vimscripts-javacomplete"]
+	path = bundle/vimscripts-javacomplete
+	url = https://github.com/vim-scripts/javacomplete.git
