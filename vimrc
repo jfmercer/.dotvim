@@ -61,7 +61,8 @@ if has("autocmd")
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-  endif
+  autocmd FileType java setlocal ts=3 sts=3 sw=3 expandtab
+endif
 
 " ================ Folds ==========================================
 
@@ -175,6 +176,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete 
+autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 
 " ================ Notes =========================================
 " Old Status Line setting
