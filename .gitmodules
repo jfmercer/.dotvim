@@ -16,12 +16,6 @@
 [submodule "bundle/scrooloose-nerdtree"]
 	path = bundle/scrooloose-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/garbas-vim-snipmate"]
-	path = bundle/garbas-vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "bundle/honza-snipmate-snippets"]
-	path = bundle/honza-snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
 [submodule "bundle/Lokaltog-vim-powerline"]
 	path = bundle/Lokaltog-vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
