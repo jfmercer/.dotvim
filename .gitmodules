@@ -10,9 +10,6 @@
 [submodule "bundle/scrooloose-nerdtree"]
 	path = bundle/scrooloose-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/Lokaltog-vim-powerline"]
-	path = bundle/Lokaltog-vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "bundle/majutsushi-tagbar"]
 	path = bundle/majutsushi-tagbar
 	url = https://github.com/majutsushi/tagbar.git
