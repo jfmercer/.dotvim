@@ -99,9 +99,10 @@ set guifont=Monaco\ for\ Powerline:h16
 " ================ vim-powerline  =================================
 
 set t_Co=256
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " let g:Powerline_theme="skwp"	"this messes up the prompt somehow
-let g:Powerline_colorscheme="skwp"
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_colorscheme="skwp"
+" let g:Powerline_symbols = 'fancy'
 
 " ================ Solarized Colorscheme Settings =================
 set background=dark
