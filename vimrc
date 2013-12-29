@@ -62,6 +62,7 @@ if has("autocmd")
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType java setlocal ts=3 sts=3 sw=3 expandtab
+  autocmd FileType c setlocal ts=3 sts=3 sw=3 expandtab
 endif
 
 " ================ Folds ==========================================
@@ -110,7 +111,8 @@ colorscheme solarized
 
 " ================ Key Mappings  ==================================
 
-let mapleader = ","     " Changes leader key from "\" to ","
+" Changes leader key from "\" to ","
+let mapleader = ","
 " Better to use <C-[> than a custom keymapping to simulate <ESC>
 " :imap jj <Esc>		" This maps <ESC> to 2 letter "j"'s 
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
@@ -155,9 +157,9 @@ set nowb
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
-set undofile
+" silent !mkdir ~/.vim/backups > /dev/null 2>&1
+" set undodir=~/.vim/backups
+" set undofile
 
 " ================ Scrolling =====================================
 
