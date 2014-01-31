@@ -1,19 +1,11 @@
 " Mercer's VIMRC file
 
 set nocompatible        " Disable vi compatibility
-
-" =============== Pathogen Initialization =========================
-" This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
-
-runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()		
-call pathogen#helptags()	
+filetype off            " Required by Vundle
 
 " ================ General Config =================================
 
 syntax on               " Enable syntax highlighting
-filetype on             " Enable filetype detection----This may interfere with Pathogen
 set visualbell          " Turn off bell
 set number              " Adds line numbers.
 set hidden              " Allows unwritten buffers to be hidden 
@@ -119,7 +111,7 @@ colorscheme solarized
 " This maps <ESC> to 'jk'
 :inoremap jk <esc>
 " disables <ESC> for finger training
-:inoremap <esc> <nop> 
+:inoremap <esc> <Nop>
 
 " Toggle :set list!
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
