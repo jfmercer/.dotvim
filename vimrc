@@ -115,9 +115,7 @@ colorscheme solarized
 " let mapleader = ","
 
 " This maps <ESC> to 'jk'
-:inoremap jk <esc>
-" disables <ESC> for finger training
-:inoremap <esc> <Nop>
+inoremap jk <esc>
 
 " Toggle :set list!
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
@@ -131,12 +129,15 @@ nnoremap <F3> :NERDTreeToggle<CR> 	" Toggle NERDTree
 nnoremap <F4> :TagbarToggle<CR>     " Toggle tagbar
 nnoremap <F5> :GundoToggle<CR>      " Toggle gundo
 
-" Disable Arrove Keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
+" Disable Arrow Keys
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 " This sets the movement keys to move by DISPLAY LINE rather than by 
 " PHYSICAL LINE. In other words, the keys won't be all screwy. 
 " Note that to move by PHYSICAL LINE I must use gj, gk, etc. 
