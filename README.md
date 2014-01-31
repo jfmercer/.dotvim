@@ -19,15 +19,11 @@ Create symlinks:
 
     ln -s ~/.vim/vimrc ~/.vimrc
 
-Switch to the `~/.vim` directory, and fetch submodules:
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
+In any vim buffer, run `:BundleInstall`. Then restart vim.
 
 ## A Note Regarding Plugin Installation
 
-As you can already see, I manage my vim plugins as git submodules with [Vundle](https://github.com/gmarik/vundle).
+I manage my vim plugins as git submodules with [Vundle](https://github.com/gmarik/vundle).
 
 # vimrc
 I've tried to keep my vimrc organized by topic and as clean as possible. Suggestions are welcome.
@@ -42,7 +38,6 @@ I've tried to keep my vimrc organized by topic and as clean as possible. Suggest
 * `,sv` sources your vimrc. The mnemonic is 's'ource 'v'imrc.
 
 # Plugins
-A strong vimrc is not enough. It's the plugins that make vim amazing . . . and much easier to use. Here are a few notes for some, though not all, of the plugins.
 
 ### [Vundle](https://github.com/gmarik/vundle)
 This manages the runtimepath.
