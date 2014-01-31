@@ -1,3 +1,0 @@
-[submodule "bundle/scrooloose-syntastic"]
-	path = bundle/scrooloose-syntastic
-	url = https://github.com/scrooloose/syntastic.git
