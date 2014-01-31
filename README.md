@@ -27,14 +27,13 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
 ## A Note Regarding Plugin Installation
 
-As you can already see, I manage my vim plugins as git submodules with the help of Tim Pope's excellent plugin [pathogen](https://github.com/tpope/vim-pathogen). For an explanation of how this is done, please see @nelstrom's vimcast, [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/).
+As you can already see, I manage my vim plugins as git submodules with [Vundle](https://github.com/gmarik/vundle).
 
 # vimrc
 I've tried to keep my vimrc organized by topic and as clean as possible. Suggestions are welcome.
 
 # Key Mappings
-* `<leader>` is set to `,`. Because `\` to too far away.
-* `ESC` is now `jj`. This will save your left pinky from a premature death.
+* `ESC` is now `jk`. This will save your left pinky from a premature death.
 * `F2` toggles paste.
 * `F3` toggles NERDTree.
 * `F4` toggles tagbar.
@@ -45,7 +44,7 @@ I've tried to keep my vimrc organized by topic and as clean as possible. Suggest
 # Plugins
 A strong vimrc is not enough. It's the plugins that make vim amazing . . . and much easier to use. Here are a few notes for some, though not all, of the plugins.
 
-### [Pathogen](https://github.com/tpope/vim-pathogen)
+### [Vundle](https://github.com/gmarik/vundle)
 This manages the runtimepath.
 ### [Fugitive](https://github.com/tpope/vim-fugitive)
 To quote Tim Pope, it's "a Git wrapper so awesome, it should be illegal."

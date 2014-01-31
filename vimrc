@@ -3,6 +3,15 @@
 set nocompatible        " Disable vi compatibility
 filetype off            " Required by Vundle
 
+" ================ Vundle Setup ===================================
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+source ~/.vim/bundles.vim
+
+filetype plugin on 		" Enable filetype-specific plugins (required)
+filetype indent on 		" Enable filetype-specific indenting (required)
 " ================ General Config =================================
 
 syntax on               " Enable syntax highlighting
@@ -35,9 +44,6 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
-
-filetype plugin on 		" Enable filetype-specific plugins
-filetype indent on 		" Enable filetype-specific indenting
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
