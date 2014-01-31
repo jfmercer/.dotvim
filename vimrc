@@ -52,6 +52,8 @@ set list listchars=tab:\ \ ,trail:·
 
 set wrap            "Wrap lines
 set linebreak       "Wrap lines at convenient points
+" creates ":Wrap: command, which quickly softwraps text
+command! -nargs=* Wrap set wrap linebreak nolist
 
 " The following specifies tab/whitespace settings for specific filetypes. autocmd & "filetype on" must be set
 if has("autocmd") 
@@ -112,15 +114,30 @@ colorscheme solarized
 " ================ Key Mappings  ==================================
 
 " Changes leader key from "\" to ","
-let mapleader = ","
-" Better to use <C-[> than a custom keymapping to simulate <ESC>
-" :imap jj <Esc>		" This maps <ESC> to 2 letter "j"'s 
+" let mapleader = ","
+
+" This maps <ESC> to 'jk'
+:inoremap jk <esc>
+" disables <ESC> for finger training
+:inoremap <esc> <nop> 
+
+" Toggle :set list!
 nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
 
+" :noh -> <C-l>
+nnoremap <silent> <C-l> :nohlsearch<CR>
+
+" Function Keys
 set pastetoggle=<F2>			" Toggle paste function for clipboard pasting
 nnoremap <F3> :NERDTreeToggle<CR> 	" Toggle NERDTree
 nnoremap <F4> :TagbarToggle<CR>     " Toggle tagbar
 nnoremap <F5> :GundoToggle<CR>      " Toggle gundo
+
+" Disable Arrove Keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " This sets the movement keys to move by DISPLAY LINE rather than by 
 " PHYSICAL LINE. In other words, the keys won't be all screwy. 
@@ -139,6 +156,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Fast vimrc editing
 nmap <silent> ,ev :e $MYVIMRC<cr>	" 'e'dit 'v'imrc
 nmap <silent> ,sv :so $MYVIMRC<cr>	" 's'ource 'v'imrc
 
