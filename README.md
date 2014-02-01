@@ -55,7 +55,9 @@ Gundo views and explorers vim's undo history. vim keeps its undo history in a tr
 Syntastic brings syntax checking to vim. As soon as you save a file, syntastic will check it for syntax errors and list them on the left-hand column. Note that it works with supported syntax checks, and if these are not installed, it won't work. For example, for Python, you need to have `flake8`, `pyflakes`, or `pylint` in your `$PATH`. Jump between errors with `:lnext` and `:lprev`.
 ### [Easy Motion](https://github.com/Lokaltog/vim-easymotion)
 Easy Motion makes it much, much easier to move the cursor around the screen. See @Lokaltog's [introduction](https://github.com/Lokaltog/vim-easymotion#introduction) for details. The short version: hit `<Leader><Leader>` followed by a motion key (say, `<Leader><Leader>w`) and then watch the magic happen.
-### [vim-powerline](https://github.com/Lokaltog/vim-powerline)
+### [vim-airline](https://github.com/bling/vim-airline)
 A beautiful and very useful vim status line. For this to work properly, you may have to install Powerline-ready fonts, four of which [may be found here](https://github.com/jfmercer/mad/tree/master/fonts).
 ### [vim-solarized](https://github.com/altercation/vim-colors-solarized)
 The best color scheme in the business. It's like a massage for the eyes.
+### [delimitMate](https://github.com/bling/vim-airline)
+Provides insert mode auto-completion for quotes, parens, brackets, etc.
