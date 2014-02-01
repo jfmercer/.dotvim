@@ -1,6 +1,6 @@
 Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'bling/vim-airline.git'
 Bundle 'Lokaltog/vim-easymotion.git'
-Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'scrooloose/nerdtree.git'

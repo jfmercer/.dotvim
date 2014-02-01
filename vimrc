@@ -35,7 +35,7 @@ setglobal fileencoding=utf-8
 
 " ================ Indentation ====================================
 
-set autoindent 			" Always set autoindenting on
+set autoindent " Always set autoindenting on
 set smartindent
 set smarttab
 " These change tabs to spaces
@@ -97,15 +97,13 @@ set wildignore+=*.png,*.jpg,*.gif,*.pdf
 
 set guifont=Monaco\ for\ Powerline:h16
 
-" ================ vim-powerline  =================================
+" ================ vim-airline ===================================
 
 set t_Co=256
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-" let g:Powerline_theme="skwp"	"this messes up the prompt somehow
-" let g:Powerline_colorscheme="skwp"
-" let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 
 " ================ Solarized Colorscheme Settings =================
+
 set background=dark
 colorscheme solarized 
 
@@ -118,10 +116,10 @@ colorscheme solarized
 inoremap jk <esc>
 
 " Toggle :set list!
-nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with "\l"
+" nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with '\l'
 
-" :noh -> <C-l>
-nnoremap <silent> <C-l> :nohlsearch<CR>
+" :noh -> <C-n>
+nnoremap <silent> <C-n> :nohlsearch<CR><C-n>
 
 " Function Keys
 set pastetoggle=<F2>			" Toggle paste function for clipboard pasting
@@ -161,8 +159,8 @@ nmap <silent> ,sv :so $MYVIMRC<cr>	" 's'ource 'v'imrc
 
 " ================ Window Settings  ==============================
 
-set splitright 		" This sets vertical split windows to open on the right rather than the left.
-set splitbelow  	 " This sets horizontal split windows to open below rather than above.
+set splitright  " This sets vertical split windows to open on the right rather than the left.
+set splitbelow  " This sets horizontal split windows to open below rather than above.
 
 " ================ Turn Off Swap Files ===========================
 
