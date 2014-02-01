@@ -59,5 +59,5 @@ Easy Motion makes it much, much easier to move the cursor around the screen. See
 A beautiful and very useful vim status line. For this to work properly, you may have to install Powerline-ready fonts, four of which [may be found here](https://github.com/jfmercer/mad/tree/master/fonts).
 ### [vim-solarized](https://github.com/altercation/vim-colors-solarized)
 The best color scheme in the business. It's like a massage for the eyes.
-### [delimitMate](https://github.com/bling/vim-airline)
-Provides insert mode auto-completion for quotes, parens, brackets, etc.
+### [delimitMate](https://github.com/Raimondi/delimitMate)
+Provides insert mode auto-completion for quotes, parentheses, brackets, etc.
