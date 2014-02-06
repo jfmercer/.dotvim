@@ -67,7 +67,7 @@ endif
 
 " ================ Folds ==========================================
 
-set foldmethod=indent   "fold based on indent
+set foldmethod=syntax   "fold based on X
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
@@ -116,14 +116,24 @@ colorscheme solarized
 inoremap jk <esc>
 
 " Toggle :set list!
-" nmap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with '\l'
+nnoremap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with '\l'
 
-" :noh -> <C-n>
-nnoremap <silent> <C-n> :nohlsearch<CR><C-n>
+" :noh -> <leader><h>
+noremap <silent> <leader>h :nohlsearch<CR><C-n>
+
+" :set nu -> <leader><n>
+noremap <silent> <leader>n :set nu!<CR><C-n>
+
+" Fast vimrc editing
+nnoremap <silent> <leader>ev :e $MYVIMRC<cr>   " 'e'dit 'v'imrc
+nnoremap <silent> <leader>sv :so $MYVIMRC<cr>  " 's'ource 'v'imrc
+
+" Fast path expansion of active buffer in command mode
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Function Keys
-set pastetoggle=<F2>			" Toggle paste function for clipboard pasting
-nnoremap <F3> :NERDTreeToggle<CR> 	" Toggle NERDTree
+set pastetoggle=<F2>                " Toggle paste function for clipboard pasting
+nnoremap <F3> :NERDTreeToggle<CR>   " Toggle NERDTree
 nnoremap <F4> :TagbarToggle<CR>     " Toggle tagbar
 nnoremap <F5> :GundoToggle<CR>      " Toggle gundo
 
@@ -148,14 +158,10 @@ nnoremap gj j
 " WINDOW CYCLING
 " These make cycling between windows easier & faster. 
 " Instead of Control-w h, you just hit Control-h
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
-" Fast vimrc editing
-nmap <silent> ,ev :e $MYVIMRC<cr>	" 'e'dit 'v'imrc
-nmap <silent> ,sv :so $MYVIMRC<cr>	" 's'ource 'v'imrc
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " ================ Window Settings  ==============================
 
