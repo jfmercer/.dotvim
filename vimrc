@@ -95,7 +95,7 @@ set wildignore+=*.png,*.jpg,*.gif,*.pdf
 
 " ================ gvim font =====================================
 
-set guifont=Monaco\ for\ Powerline:h16
+set guifont=Menlo\ for\ Powerline:h18
 
 " ================ vim-airline ===================================
 
