@@ -21,6 +21,7 @@ set hidden              " Allows unwritten buffers to be hidden
 set ruler       		" Show the cursor position all the time
 set showmode            " Show which mode are we in
 set showmatch		    " Show matching brackets.
+set cursorline          " Highlight current line
 set laststatus=2        " Always show the status line
 set linespace=3         " Prefer a slightly higher line height
 set noerrorbells        " Disables the annoying beep
