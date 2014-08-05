@@ -5,10 +5,11 @@ filetype off            " Required by Vundle
 
 " ================ Vundle Setup ===================================
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 source ~/.vim/bundles.vim
+call vundle#end()
 
 filetype plugin on 		" Enable filetype-specific plugins (required)
 filetype indent on 		" Enable filetype-specific indenting (required)
