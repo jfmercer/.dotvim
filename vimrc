@@ -64,6 +64,7 @@ if has("autocmd")
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType java setlocal ts=3 sts=3 sw=3 expandtab
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType c setlocal ts=3 sts=3 sw=3 expandtab
 endif
 
