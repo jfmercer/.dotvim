@@ -4,7 +4,7 @@ set nocompatible        " Disable vi compatibility
 filetype off            " Required by Vundle
 
 " ================ Vundle Setup ===================================
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Bundle 'gmarik/vundle'
