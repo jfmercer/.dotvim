@@ -19,6 +19,10 @@ Create symlinks:
 
     ln -s ~/.vim/vimrc ~/.vimrc
 
+Install Vundle:
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 In any vim buffer, run `:BundleInstall`. Then restart vim.
 
 ## A Note Regarding Plugin Installation
