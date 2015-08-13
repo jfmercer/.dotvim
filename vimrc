@@ -103,18 +103,18 @@ set guifont=Menlo\ for\ Powerline:h18
 
 " ================ vim-airline ===================================
 
-set t_Co=256
+" set t_Co=256     " Forces 256 colors, unneeded when TERM is already set to 256
 let g:airline_powerline_fonts = 1
 
 " ================ Solarized Colorscheme Settings =================
 
 set background=dark
-colorscheme solarized 
+colorscheme solarized
 
 " ================ Key Mappings  ==================================
 
 " Changes leader key from "\" to ","
-" let mapleader = ","
+let mapleader = ","
 
 " This maps <ESC> to 'jk'
 inoremap jk <esc>
