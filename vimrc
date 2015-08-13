@@ -7,14 +7,15 @@ filetype off            " Required by Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 source ~/.vim/bundles.vim
 call vundle#end()
+" ================ End Vundle Setup ===============================
+
+" ================ General Config =================================
 
 filetype plugin on 		" Enable filetype-specific plugins (required)
 filetype indent on 		" Enable filetype-specific indenting (required)
-" ================ General Config =================================
-
 syntax on               " Enable syntax highlighting
 set visualbell          " Turn off bell
 set number              " Adds line numbers.
