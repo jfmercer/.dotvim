@@ -1,4 +1,4 @@
-" Mercer's VIMRC file
+" John F. Mercer's VIMRC file
 
 set nocompatible        " Disable vi compatibility
 filetype off            " Required by Vundle
@@ -14,15 +14,15 @@ call vundle#end()
 
 " ================ General Config =================================
 
-filetype plugin on 		" Enable filetype-specific plugins (required)
-filetype indent on 		" Enable filetype-specific indenting (required)
+filetype plugin on      " Enable filetype-specific plugins (required)
+filetype indent on      " Enable filetype-specific indenting (required)
 syntax on               " Enable syntax highlighting
 set visualbell          " Turn off bell
 set number              " Adds line numbers.
-set hidden              " Allows unwritten buffers to be hidden 
-set ruler       		" Show the cursor position all the time
+set hidden              " Allows unwritten buffers to be hidden
+set ruler               " Show the cursor position all the time
 set showmode            " Show which mode are we in
-set showmatch		    " Show matching brackets.
+set showmatch           " Show matching brackets.
 set cursorline          " Highlight current line
 set laststatus=2        " Always show the status line
 set linespace=3         " Prefer a slightly higher line height
@@ -36,37 +36,40 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set encoding=utf-8
 setglobal fileencoding=utf-8
 
-" ================ Indentation ====================================
+" ================ Indentation and Whitespace ====================================
 
-set autoindent " Always set autoindenting on
+set autoindent    " Always set autoindenting on
 set smartindent
 set smarttab
-" These change tabs to spaces
-" To change spaces back to tabs, use set: noexpandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
 
-" Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set tabstop=4     " Specifies the number of spaces that a tab equals
+set shiftwidth=4  " Specifies the number of spaces to insert when using Normal Mode's indent function
+set softtabstop=4 " Sets the number of spaces Backspace uses in Insert Mode
+set expandtab     " When enabled, specifies the uses of spaces instead of tab characters
 
-set wrap            "Wrap lines
-set linebreak       "Wrap lines at convenient points
-" creates ":Wrap: command, which quickly softwraps text
+set list          " Show invisible characters
+set listchars=tab:▸\ ,trail:· ",eol:¬  " Set appearance of invisible characters
+
+set wrap          " Wrap lines
+set linebreak     " Wrap lines at convenient points
+" creates :Wrap: command, which quickly softwraps text
 command! -nargs=* Wrap set wrap linebreak nolist
 
 " The following specifies tab/whitespace settings for specific filetypes. autocmd & "filetype on" must be set
-if has("autocmd") 
+if has("autocmd")
 " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType java setlocal ts=3 sts=3 sw=3 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType c setlocal ts=3 sts=3 sw=3 expandtab
+  " Automatically strip trailing whitespaces on save
+  " This will really mess up git diffs unless the purpose of the commit
+  " is to fix whitespace
+  " autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
 endif
 
 " ================ Folds ==========================================
@@ -120,12 +123,12 @@ let mapleader = ","
 inoremap jk <esc>
 
 " Toggle :set list!
-nnoremap <leader>l :set list!<CR>	" Shortcut to rapidly toggle `set list` with '\l'
+nnoremap <leader>l :set list!<CR>   " Shortcut to rapidly toggle `set list` with '<leader>l'
 
-" :noh -> <leader><h>
+" Toggle highlighting :noh -> <leader><h>
 noremap <silent> <leader>h :nohlsearch<CR><C-n>
 
-" :set nu -> <leader><n>
+" Toggle line numbers :set nu -> <leader><n>
 noremap <silent> <leader>n :set nu!<CR><C-n>
 
 " Fast vimrc editing
@@ -150,9 +153,9 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
-" This sets the movement keys to move by DISPLAY LINE rather than by 
-" PHYSICAL LINE. In other words, the keys won't be all screwy. 
-" Note that to move by PHYSICAL LINE I must use gj, gk, etc. 
+" This sets the movement keys to move by DISPLAY LINE rather than by
+" PHYSICAL LINE. In other words, the keys won't be all screwy.
+" Note that to move by PHYSICAL LINE I must use gj, gk, etc.
 " Basically, this changes vim's original gj to j, gk to k, & vice-versa.
 nnoremap k gk
 nnoremap j gj
@@ -160,7 +163,7 @@ nnoremap gk k
 nnoremap gj j
 
 " WINDOW CYCLING
-" These make cycling between windows easier & faster. 
+" These make cycling between windows easier & faster.
 " Instead of Control-w h, you just hit Control-h
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -194,7 +197,7 @@ set sidescroll=1
 
 " ================ Omnicomplete ==================================
 
-set ofu=syntaxcomplete#Complete 	" Turn on omnicomplete
+set ofu=syntaxcomplete#Complete     " Turn on omnicomplete
 " Use CTRL-X CTRL-O in Insert mode to start the completion.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -203,8 +206,66 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete 
+autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+
+" ================ NERDTree autocommands  =========================
+" Open NERDTree on startup
+autocmd vimenter * NERDTree
+" Open NERDTree on startup EVEN IF no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim even if the only window left open is NERDTree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" ================ vimscript functions =========================================
+
+" :Stab
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+
+" :SummarizeTabs
+" Display tab and space settings
+command! -nargs=* SummarizeTabs call SummarizeTabs()
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
+" :Strip
+" Strip Trailing Whitespace
+command! -nargs=* Strip call <SID>StripTrailingWhitespaces()
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
 
 " ================ Notes =========================================
 " Old Status Line setting
@@ -220,10 +281,3 @@ autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 " :new opens a horizontal window
 " :vnew opens a vertical window
 
-" ================ NERDTree autocommands  =========================
-" Open NERDTree on startup
-" autocmd vimenter * NERDTree
-" Open NERDTree on startup EVEN IF no files were specified
-" autocmd vimenter * if !argc() | NERDTree | endif
-" Close vim even if the only window left open is NERDTree
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
