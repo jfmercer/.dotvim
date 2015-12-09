@@ -104,11 +104,6 @@ set wildignore+=*.png,*.jpg,*.gif,*.pdf
 
 set guifont=Menlo\ for\ Powerline:h18
 
-" ================ vim-airline ===================================
-
-" set t_Co=256     " Forces 256 colors, unneeded when TERM is already set to 256
-let g:airline_powerline_fonts = 1
-
 " ================ Solarized Colorscheme Settings =================
 
 set background=dark
@@ -209,14 +204,29 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 
-" ================ NERDTree autocommands  =========================
+" ================ NERDTree Settings  ======================================
 " Open NERDTree on startup
 autocmd vimenter * NERDTree
 " Open NERDTree on startup EVEN IF no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim even if the only window left open is NERDTree
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" ================ vim-airline Settings  ======================================
+let g:airline#extensions#tabline#enabled=1 " Automatically displays all buffers when there's only one tab open.
+let g:airline_powerline_fonts = 1          " Use powerline fonts
+" set t_Co=256                             " Forces 256 colors, unneeded when TERM is already set to 256
+
+" ================ Syntastic Settings =========================================
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
 
 " ================ vimscript functions =========================================
 
