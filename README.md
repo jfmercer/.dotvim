@@ -47,6 +47,9 @@ I've tried to keep my vimrc organized by topic and as clean as possible. Suggest
 This manages the runtimepath.
 ### [Fugitive](https://github.com/tpope/vim-fugitive)
 To quote Tim Pope, it's "a Git wrapper so awesome, it should be illegal."
+### [Surround](https://github.com/tpope/vim-surround)
+This handles the surrounding of text objects with parentheses, brackets, quotes, tags, etc.
+Use `cs`, `ds`, `ys`, & `yss`. See [the documentation](https://github.com/tpope/vim-surround#surroundvim) or run `:help surround`.
 ### [NERDTree](https://github.com/scrooloose/nerdtree)
 A file tree explorer. Basically, the project drawer you may be missing from Textmate and Sublime Text.
 ### [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
@@ -65,3 +68,5 @@ A beautiful and very useful vim status line. For this to work properly, you may 
 The best color scheme in the business. It's like a massage for the eyes.
 ### [delimitMate](https://github.com/Raimondi/delimitMate)
 Provides insert mode auto-completion for quotes, parentheses, brackets, etc.
+### [vim-mustache-handlebars](https://github.com/mustache/vim-mustache-handlebars)
+Syntax highlighting and other goodies for [mustache](http://mustache.github.io/) and [handlebars](http://handlebarsjs.com/) templates.
