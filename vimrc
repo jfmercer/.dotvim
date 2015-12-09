@@ -35,6 +35,7 @@ set gcr=a:blinkon0      " Disable cursor blink
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set encoding=utf-8
 setglobal fileencoding=utf-8
+set nrformats=          " Treats all numbers as decimal, e.g., octal 06 is treated as decimal 6
 
 " ================ Indentation and Whitespace ====================================
 
