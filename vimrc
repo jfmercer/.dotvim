@@ -206,6 +206,7 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 
 " ================ NERDTree Settings  ======================================
+
 " Open NERDTree on startup
 autocmd vimenter * NERDTree
 " Open NERDTree on startup EVEN IF no files were specified
@@ -215,19 +216,29 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " ================ vim-airline Settings  ======================================
+
 let g:airline#extensions#tabline#enabled=1 " Automatically displays all buffers when there's only one tab open.
 let g:airline_powerline_fonts = 1          " Use powerline fonts
 " set t_Co=256                             " Forces 256 colors, unneeded when TERM is already set to 256
 
 " ================ Syntastic Settings =========================================
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Custom file checker configurations
+" Cf. https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers
+" let g:syntastic_php_checkers = [] " Disables checking of php files
+" let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"] " Activate php, phpcs, & phpmd
+
+" Get information about current buffer
+" :SyntasticInfo
 
 " ================ vimscript functions =========================================
 
