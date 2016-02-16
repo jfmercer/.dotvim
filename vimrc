@@ -127,6 +127,16 @@ colorscheme solarized
 " Changes leader key from "\" to ","
 let mapleader = ","
 
+" Map Local Leader to \\
+" This is used to prefix mappings specific to certain filetypes, such .js, .py, etc.
+let maplocalleader = "\\"
+
+" Examples of local mappings
+" <localleader>c comments out a line in JavaScript
+" :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+" <localleader>c comments out a line in Python
+" :autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+
 " This maps <ESC> to 'jk'
 inoremap jk <esc>
 
