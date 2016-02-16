@@ -110,6 +110,20 @@ colorscheme solarized
 
 " ================ Key Mappings  ==================================
 
+" *noremap prevents recursion in mappings
+" ALWAYS use *noremap
+" COMMANDS     MODES
+" noremap  = Normal, Visual, Select, and Operator-pending
+" nnoremap = Normal
+" vnoremap = Visual and Select
+" snoremap = Select
+" xnoremap = Visual
+" onoremap = Operator-Pending
+" noremap! = Insert and Command-line
+" inoremap = Insert
+" lnoremap = Insert, Command-line, Lang-Arg
+" cnoremap = Command-line
+
 " Changes leader key from "\" to ","
 let mapleader = ","
 
