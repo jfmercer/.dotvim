@@ -224,7 +224,8 @@ set sidescroll=1
 
 " ================ Omnicomplete ==================================
 
-set ofu=syntaxcomplete#Complete     " Turn on omnicomplete
+" This is mostly syntax highlighting. See :help ft-syntax-omni
+set omnifunc=syntaxcomplete#Complete     " Turn on omnicomplete
 " Use CTRL-X CTRL-O in Insert mode to start the completion.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -232,6 +233,8 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" Adds HTML and JS highlighting to PHP files
+let g:omni_syntax_group_include_php = 'php\w\+,javaScript\w\+,html\w\+'
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
