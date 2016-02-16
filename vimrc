@@ -57,21 +57,19 @@ set linebreak     " Wrap lines at convenient points
 command! -nargs=* Wrap set wrap linebreak nolist
 
 " The following specifies tab/whitespace settings for specific filetypes. autocmd & "filetype on" must be set
-if has("autocmd")
-" Syntax of these languages is fussy over tabs Vs spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType java setlocal ts=3 sts=3 sw=3 expandtab
-  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType c setlocal ts=3 sts=3 sw=3 expandtab
-  " Automatically strip trailing whitespaces on save
-  " This will really mess up git diffs unless the purpose of the commit
-  " is to fix whitespace
-  " autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
-endif
+autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType java setlocal ts=3 sts=3 sw=3 expandtab
+autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType c setlocal ts=3 sts=3 sw=3 expandtab
+
+" Automatically strip trailing whitespaces on save
+" This will really mess up git diffs unless the purpose of the commit
+" is to fix whitespace
+" autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
 
 " ================ Folds ==========================================
 
