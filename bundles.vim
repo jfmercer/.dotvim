@@ -1,5 +1,7 @@
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'bling/vim-airline.git'
+Plugin 'vim-airline/vim-airline.git'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'Lokaltog/vim-easymotion.git'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'mustache/vim-mustache-handlebars'

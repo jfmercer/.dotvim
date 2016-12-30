@@ -105,6 +105,7 @@ set guifont=Menlo\ for\ Powerline:h18
 
 " ================ Solarized Colorscheme Settings =================
 
+set t_Co=256                               " Forces 256 colors, unneeded when TERM is already set to 256
 set background=dark
 colorscheme solarized
 
@@ -253,7 +254,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 let g:airline#extensions#tabline#enabled=1 " Automatically displays all buffers when there's only one tab open.
 let g:airline_powerline_fonts = 1          " Use powerline fonts
-" set t_Co=256                             " Forces 256 colors, unneeded when TERM is already set to 256
+if !exists('g:airline_symbols')            " Helps with powerline font rendering
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 
 " ================ Syntastic Settings =========================================
 
