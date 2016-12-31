@@ -65,6 +65,7 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType java setlocal ts=3 sts=3 sw=3 expandtab
 autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType c setlocal ts=3 sts=3 sw=3 expandtab
+autocmd FileType lisp,scheme setlocal equalprg=scmindent
 
 " Automatically strip trailing whitespaces on save
 " This will really mess up git diffs unless the purpose of the commit
@@ -99,13 +100,17 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif,*.pdf
 
+" ================ rainbow parentheses  ==========================
+
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
 " ================ gvim font =====================================
 
 set guifont=Menlo\ for\ Powerline:h18
 
 " ================ Solarized Colorscheme Settings =================
 
-set t_Co=256                               " Forces 256 colors, unneeded when TERM is already set to 256
+set t_Co=256 " Forces 256 colors, unneeded when TERM is already set to 256
 set background=dark
 colorscheme solarized
 
